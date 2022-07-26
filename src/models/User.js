@@ -27,15 +27,20 @@ const UserSchema = new Schema({
     },
     prenom:{
         type: String,
-        min: [3, 'Le prenom doit avoir au moins 3 caracteres'],
-        max: [12, 'Le prenom doit avoir au maximum 12 caracteres'],
+        minLength: [3, 'Le prenom doit avoir au moins 3 caracteres'],
+        maxLength: [12, 'Le prenom doit avoir au maximum 12 caracteres'],
         required: [true, 'Le prenom est obligatoire.']
     },
     nom:{
         type: String,
-        min: [3, 'Le nom doit avoir au moins 3 caracteres'],
-        max: [10, 'Le nom doit avoir au maximum 10 caracteres'],
+        minLength: [3, 'Le nom doit avoir au moins 3 caracteres'],
+        maxLength: [10, 'Le nom doit avoir au maximum 10 caracteres'],
         required: [true, 'Le nom est obligatoire.']
+    },
+    password:{
+        type: String,
+        minLength: [6, 'Le mot de passe doit avoir au moins 6 caracteres'],
+        required: [true, 'Le  mot de passe est obligatoire.']
     }
 });
 
