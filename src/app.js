@@ -17,7 +17,7 @@ app
         if(!user) Promise.reject();
         return res.status(200).json(user);
     } catch (error) {
-        return res.status(401).json(error);
+        return res.status(500).json(error);
     }    
  })
  .put('/user/:id', (req, res)=>{
