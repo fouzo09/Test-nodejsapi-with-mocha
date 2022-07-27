@@ -15,7 +15,7 @@ before(()=>{
 });
 
 describe('GET /users', ()=>{
-    it(`Should get list of users`, (done)=>{  
+    it(`Should return list of users`, (done)=>{  
         request(app)
             .get('/users')
             .end((err, res)=>{

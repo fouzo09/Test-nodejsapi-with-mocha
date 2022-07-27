@@ -42,7 +42,7 @@ app
  .delete('/user/:email', async(req, res)=>{
     try {
         const user = await User.findOneAndDelete({email: req.params.email});
-        if(!user) Promise.reject();
+        if(!user) throw new Error('Aucun utilisateur ne correspond.');
         return res.status(200).json(user);
     } catch (error) {
         return res.status(401).json(error);
