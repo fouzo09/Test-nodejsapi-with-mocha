@@ -19,7 +19,7 @@ const UserSchema = new Schema({
         unique: [true, 'Le numero de telephone est deja utilisé.'],
         validate:{
             validator: (value)=>{
-                return true;
+                return true; //Ecrire des regex pour valider les numeros
             },
             message: (props)=> `${props.value} n'est pas un numero guineen valide`
         },
